@@ -1,5 +1,6 @@
 body {
-    background-image: url(./assets/background.jpg);
+    /* background-image: url(./assets/background.jpg); */
+    background-color:azure;
     color: white;
     box-sizing: border-box;
 }
@@ -9,8 +10,8 @@ image{
 }
 .container {
     background-color: black;
-    max-width: 70%;
-    height: 70vh;
+    max-width: 50%;
+    height: 60vh;
     margin: 100px auto;
     border: solid 2px white;
     padding: 15px 20px;
@@ -32,7 +33,7 @@ image{
 .picture {
     border: solid 1px white;
     border-radius: 10px;
-    background-image: url(./assets/cover_6.jpg);
+    background-image: url(./assets/meme_1.jpg);
     background-size: 100% 100%;
     width: 100%;
     height: 80%;
@@ -43,15 +44,52 @@ image{
     background-color: aquamarine;
     align-self: auto;
 }
-.controls_block {
-    background-color: greenyellow;
+.controls {
+    /* background-color: greenyellow; */
     width: 30%;
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.control-label{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.control-label:hover > .control-item {
+    background-color: white;
+    border-color: white;
 }
 .control-item{
-    
+    border: solid 2px yellow;
+    background-color: yellow;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    width: 15px;
+    height: 15px;
+    box-sizing: border-box;
 }
-.circle{
+.controls-btn{
+    display: block;
     margin: 5px;
-    fill: crimson;
 }
+.filler{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: black;
+    display: none;
+}
+.control-item input{
+    display: none;
+}
+.control-item input:checked + .filler{
+    display: block;
+}
+
