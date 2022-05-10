@@ -28,54 +28,43 @@ image{
     flex-wrap: wrap;
     align-items: center;
     align-content: flex-start;
-    /* gap: 20px; */
-}
+    }
 .meme-picture {
     order: -2;
-    border: solid 1px white;
+    
     border-radius: 10px;
     width: 100%;
     height: 80%;
     margin-bottom: 25px;
 }
 .picture{
+    border: solid 1px white;
+    border-radius: 10px;
     background-size: 100% 100%;
     width: 100%;
     height: 100%;
+    display: none;
 }
 .picture1{
-    display: none;
+    
     background-image: url(./assets/meme_1.jpg);
 }
 .picture2{
-    display: none;
     background-image: url(./assets/meme_2.jpg);
 }
 .picture3{
-    display: none;
     background-image: url(./assets/meme_3.jpg);
 }
 .picture4{
-    display: none;
     background-image: url(./assets/meme_4.jpg);
 }
 .meme-text {
     order: -1;
-    width: 65%;
+    width: 80%;
     font: 20px Arial, sans-serif;
-    /* background-color: aquamarine; */
-    align-self: auto;
 }
-.text1{
-    display: none;
-}
-.text2{
-    display: none;
-}
-.text3{
-    display: none;
-}
-.text4{
+.text{
+    transition: all 0.5s ease;
     display: none;
 }
 .controls {
@@ -121,34 +110,40 @@ image{
     background-color: black;
     display: none;
 }
-.control-item input{
-    display: none;
+input{
+    appearance: none;
+    background-color: yellow;
+    border: 0.15em solid yellow;
+    border-radius: 50%;
+    margin: 0;
+    font: inherit;
+    width: 1.15em;
+    height: 1.15em;
+    cursor: pointer;
+    
+}
+input:hover{
+    background-color: white;
+    border-color: white;
+}
+input:checked{
+    background-color: transparent;
 }
 .control-item input:checked + .filler{
     display: block;
 }
-.control-label input:checked ~ .text{
-    opacity: 1;
-    background-color: red;
-}
-.controls-btn{
-    background-color: darkslateblue;
-}
+
 #btn1:checked ~ .meme-text .text1{
     display: inline;
-    background-color: red;
 }
 #btn2:checked ~ .meme-text .text2{
     display: inline;
-    background-color: red;
 }
 #btn3:checked ~ .meme-text .text3{
     display: inline;
-    background-color: red;
 }
 #btn4:checked ~ .meme-text .text4{
     display: inline;
-    background-color: red;
 }
 #btn1:checked ~ .meme-picture .picture1{
     display: block;
