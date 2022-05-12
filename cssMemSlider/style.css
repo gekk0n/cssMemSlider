@@ -1,8 +1,8 @@
 body {
-    /* background-image: url(./assets/background.jpg); */
-    background-color:azure;
+    background-image: url(./assets/background.jpg);
     color: white;
     box-sizing: border-box;
+    font: 25px Arial, sans-serif;
 }
 image{
     display: block;
@@ -10,11 +10,17 @@ image{
 }
 .container {
     background-color: black;
-    max-width: 50%;
+    max-width: 60vw;
     height: 60vh;
     margin: 100px auto;
     border: solid 2px white;
     padding: 15px 20px;
+}
+@media screen and (min-width: 1441px) {
+    .container{
+        max-width: 800px;
+    }
+    
 }
 .wrapper {
     width: 100%;
@@ -24,29 +30,32 @@ image{
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     align-content: flex-start;
+    position: relative;
     }
 .meme-picture {
     order: -2;
-    
     border-radius: 10px;
     width: 100%;
     height: 80%;
     margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+    border: solid 1px white;
 }
 .picture{
-    border: solid 1px white;
+    position: absolute;
+    opacity: 0;
     border-radius: 10px;
     background-size: 100% 100%;
     width: 100%;
     height: 100%;
-    display: none;
+    transition: all 1s ease-out;
 }
 .picture1{
-    
     background-image: url(./assets/meme_1.jpg);
 }
 .picture2{
@@ -60,33 +69,47 @@ image{
 }
 .meme-text {
     order: -1;
-    width: 80%;
-    font: 20px Arial, sans-serif;
+    flex-grow: 1;
+    position: relative;
 }
 .text{
-    transition: all 0.5s ease;
-    display: none;
+    transition: all 1s ease-out;
+    position: absolute;
+    opacity: 0;
+    font-size: 1.1em;
 }
-.controls {
+#btn1:checked ~ .meme-text .text1{
+    opacity: 1;
+}
+#btn2:checked ~ .meme-text .text2{
+    opacity: 1;
+}
+#btn3:checked ~ .meme-text .text3{
+    opacity: 1;
+}
+#btn4:checked ~ .meme-text .text4{
+    opacity: 1;
+}
+#btn1:checked ~ .meme-picture .picture1{
+    opacity: 1;
+}
+#btn2:checked ~ .meme-picture .picture2{
+    opacity: 1;
+}
+#btn3:checked ~ .meme-picture .picture3{
+    opacity: 1;
+}
+#btn4:checked ~ .meme-picture .picture4{
+    opacity: 1;
+}
+/* .controls {
     order: 1;
     width: 30%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-.control-label{
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: aqua;
-}
-.control-label:hover > .control-item {
-    background-color: white;
-    border-color: white;
-}
+
 .control-item{
     border: solid 2px yellow;
     background-color: yellow;
@@ -98,7 +121,7 @@ image{
     width: 15px;
     height: 15px;
     box-sizing: border-box;
-}
+} */
 .controls-btn{
     display: block;
     margin: 5px;
@@ -117,8 +140,8 @@ input{
     border-radius: 50%;
     margin: 0;
     font: inherit;
-    width: 1.15em;
-    height: 1.15em;
+    width: 0.7em;
+    height: 0.7em;
     cursor: pointer;
     
 }
@@ -132,28 +155,22 @@ input:checked{
 .control-item input:checked + .filler{
     display: block;
 }
-
-#btn1:checked ~ .meme-text .text1{
-    display: inline;
+.labels-block{
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+    position: absolute;
+    top: 85%;
 }
-#btn2:checked ~ .meme-text .text2{
-    display: inline;
+.control-label{
+    width: 28px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
-#btn3:checked ~ .meme-text .text3{
-    display: inline;
-}
-#btn4:checked ~ .meme-text .text4{
-    display: inline;
-}
-#btn1:checked ~ .meme-picture .picture1{
-    display: block;
-}
-#btn2:checked ~ .meme-picture .picture2{
-    display: block;
-}
-#btn3:checked ~ .meme-picture .picture3{
-    display: block;
-}
-#btn4:checked ~ .meme-picture .picture4{
-    display: block;
+.control-label:hover > .control-item {
+    background-color: white;
+    border-color: white;
 }
