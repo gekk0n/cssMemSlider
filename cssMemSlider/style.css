@@ -1,26 +1,22 @@
 body {
     background-image: url(./assets/background_1.jpg);
-    color: white;
+    color: yellow;
     box-sizing: border-box;
-    font: 20px Arial, sans-serif;
+    font: 1em Impact, sans-serif;
+    letter-spacing: 0.1em; 
 }
 image{
     display: block;
     width: 100%;
 }
 .container {
-    background-color: black;
-    max-width: 55vw;
-    height: 60vh;
+    background-color: rgb(60, 60, 60);
+    max-width: 65vw;
+    height: 70vh;
     margin: 100px auto;
-    border: solid 2px white;
-    padding: 15px 20px;
-}
-@media screen and (min-width: 1441px) {
-    .container{
-        max-width: 800px;
-    }
-    
+    /* border: solid 1px white; */
+    padding: 1.5% 2%;
+    border-radius: 10px;
 }
 .wrapper {
     width: 100%;
@@ -35,15 +31,16 @@ image{
     align-items: flex-start;
     align-content: flex-start;
     position: relative;
-    }
+    row-gap: 25px;
+}
 .meme-picture {
     order: -2;
     border-radius: 10px;
     width: 100%;
     height: 80%;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
     overflow: hidden;
-    border: solid 1px white;
+    /* border: solid 1px white; */
     display: flex;
     justify-content: stretch;
     align-items: center;
@@ -72,8 +69,6 @@ image{
     opacity: 1;
     flex-shrink: 0;
 }
-
-
 .meme-text {
     order: -1;
     flex-grow: 1;
@@ -81,10 +76,10 @@ image{
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
+    font-size: 1.3em;
 }
 .text{
     opacity: 0;
-    font-size: 1.1em;
     transition: all 1s ease-out;
     width: 0;
     height: 25px;
@@ -95,21 +90,16 @@ image{
     margin-right: auto;
     width: 100%;
 }
-
-
-
-
-
 .controls-btn{
     display: block;
     appearance: none;
     background-color: yellow;
-    border: 0.1em solid yellow;
+    border: 0.15em solid yellow;
     border-radius: 50%;
     margin: 5px;
     font: inherit;
-    width: 0.7em;
-    height: 0.7em;
+    width: 1em;
+    height: 1em;
     cursor: pointer;
 }
 .controls-btn:hover{
@@ -119,7 +109,7 @@ image{
 .controls-btn:checked{
     background-color: transparent;
 }
-.labels-block{
+/* .labels-block{
     display: flex;
     align-self: center;
     justify-self: flex-end;
@@ -137,4 +127,51 @@ image{
 .control-label:hover > .control-item {
     background-color: white;
     border-color: white;
+} */
+
+@media screen and (min-width: 1441px) {
+    .container{
+        max-width: 800px;
+    }
+}
+@media screen and (max-width: 1025px) {
+    .container{
+        max-width: 80vw;
+        max-height: 60vh;
+    }
+}
+@media screen and (max-width: 769px) {
+    /* .container{
+        max-width: 80vw;
+        height: 50vh;
+    } */
+    .controls-btn:first-child{
+        margin-left: 35vw;
+    }
+    .slider{
+        flex-wrap: wrap;
+        row-gap: 15px;
+
+    }
+    .meme-text{
+        order: 2;
+        width: 100%;
+        font-size: 0.8em;
+    }
+}
+@media screen and (max-width: 321px) {
+    .container{
+        height: 25vh;
+    }
+    .controls-btn:first-child{
+        margin-left: 30vw;
+    }
+    .controls-btn{
+        width: 0.5em;
+        height: 0.5em;
+    }
+    .slider{
+        row-gap: 5px;
+    }
+
 }
