@@ -1,8 +1,8 @@
 body {
-    background-image: url(./assets/background.jpg);
+    background-image: url(./assets/background_1.jpg);
     color: white;
     box-sizing: border-box;
-    font: 25px Arial, sans-serif;
+    font: 20px Arial, sans-serif;
 }
 image{
     display: block;
@@ -10,7 +10,7 @@ image{
 }
 .container {
     background-color: black;
-    max-width: 60vw;
+    max-width: 55vw;
     height: 60vh;
     margin: 100px auto;
     border: solid 2px white;
@@ -42,12 +42,13 @@ image{
     width: 100%;
     height: 80%;
     margin-bottom: 25px;
-    position: relative;
     overflow: hidden;
     border: solid 1px white;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
 }
 .picture{
-    position: absolute;
     opacity: 0;
     border-radius: 10px;
     background-size: 100% 100%;
@@ -67,93 +68,56 @@ image{
 .picture4{
     background-image: url(./assets/meme_4.jpg);
 }
+#btn1:checked ~ .meme-picture .picture1, #btn2:checked ~ .meme-picture .picture2, #btn3:checked ~ .meme-picture .picture3, #btn4:checked ~ .meme-picture .picture4{
+    opacity: 1;
+    flex-shrink: 0;
+}
+
+
 .meme-text {
     order: -1;
     flex-grow: 1;
-    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
 }
 .text{
-    transition: all 1s ease-out;
-    position: absolute;
     opacity: 0;
     font-size: 1.1em;
-}
-#btn1:checked ~ .meme-text .text1{
-    opacity: 1;
-}
-#btn2:checked ~ .meme-text .text2{
-    opacity: 1;
-}
-#btn3:checked ~ .meme-text .text3{
-    opacity: 1;
-}
-#btn4:checked ~ .meme-text .text4{
-    opacity: 1;
-}
-#btn1:checked ~ .meme-picture .picture1{
-    opacity: 1;
-}
-#btn2:checked ~ .meme-picture .picture2{
-    opacity: 1;
-}
-#btn3:checked ~ .meme-picture .picture3{
-    opacity: 1;
-}
-#btn4:checked ~ .meme-picture .picture4{
-    opacity: 1;
-}
-/* .controls {
-    order: 1;
-    width: 30%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    transition: all 1s ease-out;
+    width: 0;
+    height: 25px;
 }
 
-.control-item{
-    border: solid 2px yellow;
-    background-color: yellow;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2px;
-    width: 15px;
-    height: 15px;
-    box-sizing: border-box;
-} */
+#btn1:checked ~ .meme-text .text1, #btn2:checked ~ .meme-text .text2, #btn3:checked ~ .meme-text .text3, #btn4:checked ~ .meme-text .text4 {
+    opacity: 1;
+    margin-right: auto;
+    width: 100%;
+}
+
+
+
+
+
 .controls-btn{
     display: block;
-    margin: 5px;
-}
-.filler{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: black;
-    display: none;
-}
-input{
     appearance: none;
     background-color: yellow;
-    border: 0.15em solid yellow;
+    border: 0.1em solid yellow;
     border-radius: 50%;
-    margin: 0;
+    margin: 5px;
     font: inherit;
     width: 0.7em;
     height: 0.7em;
     cursor: pointer;
-    
 }
-input:hover{
+.controls-btn:hover{
     background-color: white;
     border-color: white;
 }
-input:checked{
+.controls-btn:checked{
     background-color: transparent;
-}
-.control-item input:checked + .filler{
-    display: block;
 }
 .labels-block{
     display: flex;
