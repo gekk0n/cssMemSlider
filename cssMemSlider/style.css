@@ -13,9 +13,9 @@ image{
     background-color: rgb(60, 60, 60);
     max-width: 65vw;
     height: 70vh;
-    margin: 100px auto;
+    margin: 10vh auto;
     padding: 1.5% 2%;
-    border-radius: 10px;
+    border-radius: 0.5em;
 }
 .wrapper {
     width: 100%;
@@ -30,11 +30,11 @@ image{
     align-items: flex-start;
     align-content: flex-start;
     position: relative;
-    row-gap: 25px;
+    row-gap: 1.5em;
 }
 .meme-picture {
     order: -2;
-    border-radius: 10px;
+    border-radius: 0.5em;
     width: 100%;
     height: 80%;
     overflow: hidden;
@@ -44,7 +44,7 @@ image{
 }
 .picture{
     opacity: 0;
-    border-radius: 10px;
+    border-radius: 0.5em;
     background-size: 100% 100%;
     width: 100%;
     height: 100%;
@@ -93,7 +93,7 @@ image{
     background-color: yellow;
     border: 0.15em solid yellow;
     border-radius: 50%;
-    margin: 5px;
+    margin: 0.3em;
     font: inherit;
     width: 1em;
     height: 1em;
