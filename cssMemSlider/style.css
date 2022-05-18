@@ -88,7 +88,8 @@ image{
     width: 100%;
 }
 .controls-btn{
-    display: block;
+    display: none;
+    /* display: block; */
     appearance: none;
     background-color: yellow;
     border: 0.15em solid yellow;
@@ -99,15 +100,51 @@ image{
     height: 1em;
     cursor: pointer;
 }
-.controls-btn:hover{
+
+
+.labels-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.control-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+    padding: 0.4em;
+}
+.control-circle{
+    background-color: yellow;
+    border: 0.15em solid yellow;
+    border-radius: 50%;
+    width: 0.8em;
+    height: 0.8em;
+}
+.control-label:hover > .control-circle{
     background-color: white;
     border-color: white;
 }
-.controls-btn:active{
+.controls-label:active ~ .labels-block > .control-label > .control-circle{
     transform: scale(0.9);
 }
-.controls-btn:checked{
+#btn1:checked ~ .labels-block > .control-label > #cc1{
     background-color: transparent;
+    border-color: white;
+}
+#btn2:checked ~ .labels-block > .control-label > #cc2{
+    background-color: transparent;
+    border-color: white;
+}
+#btn3:checked ~ .labels-block > .control-label > #cc3{
+    background-color: transparent;
+    border-color: white;
+}
+#btn4:checked ~ .labels-block > .control-label > #cc4{
+    background-color: transparent;
+    border-color: white;
 }
 
 @media screen and (min-width: 1441px) {
