@@ -114,7 +114,7 @@ image{
     background-color: white;
     border-color: white;
 }
-.controls-label:active ~ .labels-block > .control-label > .control-circle{
+.control-label:active{
     transform: scale(0.9);
 }
 #btn1:checked ~ .labels-block > .control-label > #cc1{
